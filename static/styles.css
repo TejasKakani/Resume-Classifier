@@ -21,5 +21,5 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .animate-bg-color {
-  animation: bgColorTransition 600ms ease-in-out forwards;
+  animation: bgColorTransition 800ms ease-in-out forwards;
 }
