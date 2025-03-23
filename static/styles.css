@@ -1,0 +1,25 @@
+input[type="file"]::file-selector-button {
+  border-color: #000;
+  border-radius: calc(infinity * 1px);
+  height: 40px;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #dadada;
+}
+
+@keyframes bgColorTransition {
+  0% {
+    background-color: #e4e4e7;
+    color: #000;
+  }
+
+  100% {
+    background-color: #18181b;
+    color: #fff;
+  }
+}
+
+.animate-bg-color {
+  animation: bgColorTransition 600ms ease-in-out forwards;
+}

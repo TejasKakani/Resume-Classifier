@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <svg class="absolute -z-10 w-screen h-screen bg-gray-700" xmlns='http://www.w3.org/2000/svg'>
+
+        <filter id='noiseFilter'>
+            <feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' />
+        </filter>
+
+        <rect width='100%' height='100%' filter='url(#noiseFilter)' />
+    </svg>
+    <nav class="sticky z-10 top-0 right-0 bg-zinc-900 h-20 w-screen flex justify-center items-center text-white text-xl">
+        <div class="rounded-full px-4 p-2 border border-white">
+        Resume Classifier
+    </div>
+    </nav>
+    <div class="p-4 flex flex-col w-screen h-[calc(100vh-80px)] justify-center items-center"> 
+        <form class="rounded-full p-2 bg-gray-200 flex" method="post" enctype="multipart/form-data">
+            <input class="w-full" type="file" name="resume" required>
+            <input class="bg-zinc-800 text-white p-1 rounded-full px-3 hover:bg-zinc-600 active:bg-zinc-900 cursor-pointer transition-all duration-300 ease-in-out"
+                type="submit" value="Upload">
+        </form>
+        <div class="animate mt-3 text-center rounded-full{% if job_category %} animate-bg-color {% else %} bg-zinc-200 text-black {% endif %}p-2">
+            {%if job_category %}
+            <span class="font-bold">Job Category: </span>
+            <span>{{ job_category }}</span>
+            {% else %}
+            <div>
+                <h1>Upload a resume file to get started.</h1>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
