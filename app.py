@@ -19,8 +19,8 @@ def classify_resume(pdf_file):
     return prediction
 
 # Load trained model and vectorizer
-vectorizer = joblib.load("vectorizer.pkl")
-model = joblib.load("resume_classifier.pkl")
+vectorizer = joblib.load("./vectorizer/vectorizer.pkl")
+model = joblib.load("./model/resume_classifier.pkl")
 
 app = Flask(__name__)
 

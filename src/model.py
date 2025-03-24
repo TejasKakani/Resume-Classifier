@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 # Load dataset
-df = pd.read_csv("UpdatedResumeDataSet.csv")  # Columns: [resume_text, category]
+df = pd.read_csv("./dataset/UpdatedResumeDataSet.csv")  # Columns: [resume_text, category]
 
 # Text Preprocessing Function
 def preprocess_text(text):
@@ -36,6 +36,6 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy * 100:.2f}%")
 
 # Save Model & Vectorizer
-joblib.dump(model, "resume_classifier.pkl")
-joblib.dump(vectorizer, "vectorizer.pkl")
+joblib.dump(model, "./model/resume_classifier.pkl")
+joblib.dump(vectorizer, "./vectorizer/vectorizer.pkl")
 print("Model and Vectorizer saved!")
